@@ -1,0 +1,79 @@
+#left-hand {
+  animation: bounceLeft 10s ease-in-out 0s infinite;
+}
+
+#white-left-hand {
+  animation: bounceLeft 10s ease-in-out 0s infinite;
+}
+
+#white-left-hand>path {
+  animation: fadeOut 10s ease-in-out 0s infinite;
+}
+
+#right-hand {
+  animation: bounceRight 10s ease-in-out 0s infinite;
+}
+
+#white-right-hand {
+  animation: bounceRight 10s ease-in-out 0s infinite;
+}
+
+#white-right-hand>path {
+  animation: fadeOut 10s ease-in-out 0s infinite;
+}
+
+#white-square {
+  transform-origin: 50%;
+  animation: bounceSmall 10s ease-in-out 0s infinite;
+}
+
+#yellow-square {
+  transform-origin: 50%;
+  animation: bounceSmall 10s ease-in-out 0s infinite;
+}
+
+#white-square>rect {
+  animation: fadeOut 10s ease-in-out 0s infinite;
+}
+
+#all {
+  transform-origin: 50%;
+  animation: spinOut 10s ease-in-out 0s infinite;
+}
+
+@keyframes bounceLeft {
+  0% { transform: translate(128px, 64px); }
+  10% { transform: translate(128px, 64px); }
+  20% { transform: translate(0, 0); }
+  90% { transform: translate(0, 0); }
+  100% { transform: translate(128px, 64px); }
+}
+
+@keyframes bounceRight {
+  0% { transform: translate(-128px, -64px); }
+  10% { transform: translate(-128px, -64px); }
+  20% { transform: translate(0, 0); }
+  90% { transform: translate(0, 0); }
+  100% { transform: translate(-128px, -64px); }
+}
+
+@keyframes bounceSmall {
+  0% { transform: scale(300%); }
+  10% { transform: scale(300%); }
+  20% { transform: scale(100%); }
+  90% { transform: scale(100%); }
+  100% { transform: scale(300%); }
+}
+
+@keyframes spinOut {
+  0% { transform: rotate(0deg); }
+  90% { transform: rotate(0deg); }
+  100% { transform: rotate(-180deg); }
+}
+
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  30% { opacity: 0; }
+  90% { opacity: 0; }
+  100% { opacity: 1; }
+}

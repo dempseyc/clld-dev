@@ -1,0 +1,19 @@
+.char{
+  color: "inherit";
+  transition: color 50ms;
+}
+
+.char.isNew{
+  color: transparent;
+}
+
+.cursor{
+  color: inherit;
+  transition: color 100ms;
+}
+
+.cursor.off {
+  color: transparent;
+}
+
+
