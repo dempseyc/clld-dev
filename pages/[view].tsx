@@ -1,13 +1,15 @@
 import Router from "next/router";
-import { ReactElement, useEffect } from "react";
+import { ReactElement, useEffect, useContext } from "react";
 import { useCallback, useMemo, useState} from "react";
 import Layout from "./_LAYOUT";
-import { ButtonGroup, Button, Flex, useColorModeValue } from "@chakra-ui/react";
+import { GlobalContext } from "./_LAYOUT";
+import { ButtonGroup, Button, Box, Flex, Text, useColorModeValue } from "@chakra-ui/react";
 import { MdBuild, MdCall } from "react-icons/md";
 import type { NextPageWithLayout } from "./_app";
 import config from "./_CONSTANTS";
 
 const Page: NextPageWithLayout = () => {
+  const context = useContext(GlobalContext);
   return (
     <Flex
       p="1em"
@@ -35,6 +37,9 @@ const Page: NextPageWithLayout = () => {
           Call us
         </Button>
       </ButtonGroup>
+      <Box>
+          <Text>{`Here is a good paragraph in roboto-slab. ${context.currView}`}</Text>
+        </Box>
     </Flex>
   );
 };

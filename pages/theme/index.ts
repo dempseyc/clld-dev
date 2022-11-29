@@ -12,7 +12,7 @@ const config: ThemeConfig = {
   useSystemColorMode: false,
 };
 
-const customSchemes = ["cyan", "pink", "yellow"];
+const customSchemes = ["cyan", "pink", "yellow", "purple"];
 
 const fontOverRides = {
   fonts: {
@@ -74,6 +74,18 @@ const overRides = {
       "800": "#5D0955",
       "900": "#2F042B",
     },
+    purple: {
+      "50": "#F0F0F5",
+      "100": "#D6D4E3",
+      "200": "#BBB8D1",
+      "300": "#A19CBF",
+      "400": "#8680AD",
+      "500": "#6C659A",
+      "600": "#56507C",
+      "700": "#413C5D",
+      "800": "#2B283E",
+      "900": "#16141F"
+    }
   },
   components: {
     Button: {

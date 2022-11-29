@@ -1,19 +1,13 @@
-.char{
-  color: "inherit";
-  transition: color 50ms;
+.title {
+  /* animation: fadeIn 800ms ease-in-out 2s forwards; */
+  animation: fadeIn 500ms ease-in-out 500ms forwards;
+
+  opacity: 0;
 }
 
-.char.isNew{
-  color: transparent;
-}
-
-.cursor{
-  color: inherit;
-  transition: color 100ms;
-}
-
-.cursor.off {
-  color: transparent;
+@keyframes fadeIn {
+  0% { opacity: 0;}
+  100% { opacity: 1;}
 }
 
 

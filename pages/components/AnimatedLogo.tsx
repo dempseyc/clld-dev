@@ -20,7 +20,7 @@ const AnimatedLogo = () => {
         <g id="all">
           <g id="yellow-square">
             <rect
-              fill={"#e6e610"}
+              fill={"#ffec5b"}
               stroke="none"
               id="rect2625"
               width="64"
@@ -43,7 +43,7 @@ const AnimatedLogo = () => {
           <g id="right-hand">
             <path
               id="path1583"
-              fill="#ff70ee"
+              fill="#f06ae3"
               stroke="none"
               d="m 351.99998,223.99992 v 63.99996 h 64.00001 v 64.00005 H 287.99996 v 64.00006 H 480 V 223.99991 Z"
             />
