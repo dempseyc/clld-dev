@@ -89,13 +89,11 @@ const overRides = {
   },
   components: {
     Button: {
-      // 1. We can update the base styles
       baseStyle: {
         fontFamily: `'Alexandria', sans-serif`,
         fontWeight: "regular",
         rounded: "none",
       },
-      // 2. We can add a new button size or extend existing
       sizes: {
         xl: {
           h: "56px",
@@ -103,7 +101,6 @@ const overRides = {
           px: "32px",
         },
       },
-      // 3. We can add a new visual variant
       variants: {
         clear: (props: { colorScheme: string | undefined }) => {
           const base = baseTheme.components.Button.variants?.outline;

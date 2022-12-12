@@ -6,18 +6,20 @@ import { GlobalContext } from "./_LAYOUT";
 import { ButtonGroup, Button, Box, Flex, Text, useColorModeValue } from "@chakra-ui/react";
 import { MdBuild, MdCall } from "react-icons/md";
 import type { NextPageWithLayout } from "./_app";
-import config from "./_CONSTANTS";
+import Projects from "./projects/Projects";
+import config from "../_CONSTANTS";
 
 const Page: NextPageWithLayout = () => {
   const context = useContext(GlobalContext);
   return (
     <Flex
-      p="1em"
+      padding="1em"
       direction="column"
       alignItems="center"
       justifyContent="space-between"
     >
-      <ButtonGroup variant={"outline"} spacing="6">
+      <Projects />
+      {/* <ButtonGroup variant={"outline"} spacing="6">
         <Button colorScheme={"cyan"}>Save</Button>
         <Button variant={"solid"} colorScheme={"yellow"}>Cancel</Button>
       </ButtonGroup>
@@ -39,7 +41,7 @@ const Page: NextPageWithLayout = () => {
       </ButtonGroup>
       <Box>
           <Text>{`Here is a good paragraph in roboto-slab. ${context.currView}`}</Text>
-        </Box>
+        </Box> */}
     </Flex>
   );
 };
