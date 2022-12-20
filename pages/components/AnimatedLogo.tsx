@@ -3,13 +3,7 @@ import { useColorModeValue } from "@chakra-ui/react";
 
 const AnimatedLogo = () => {
   return (
-    <div className="animatedLogo" style={{
-      position: "relative",
-      height: "100%",
-      aspectRatio: "1 / 1",
-      borderRadius: "5%",
-    }}
-    >
+    <>
       <svg
         width="100%"
         height="100%"
@@ -75,7 +69,7 @@ const AnimatedLogo = () => {
           </g>
         </g>
       </svg>
-    </div>
+    </>
   )
 }
 

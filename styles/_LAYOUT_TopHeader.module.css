@@ -4,7 +4,7 @@
   max-height: 100vw;
   max-width: 100vh;
   /* animation: shrinkHeader 800ms ease-in-out 1500ms forwards; */
-  animation: shrinkHeader 500ms ease-in-out 0s forwards;
+  animation: shrinkHeader 1s ease-in-out 1s forwards;
 }
 
 @keyframes shrinkHeader {

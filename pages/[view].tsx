@@ -6,7 +6,7 @@ import { GlobalContext } from "./_LAYOUT";
 import { ButtonGroup, Button, Box, Flex, Text, useColorModeValue } from "@chakra-ui/react";
 import { MdBuild, MdCall } from "react-icons/md";
 import type { NextPageWithLayout } from "./_app";
-import Projects from "./projects/Projects";
+import ActionablesListPost from "./reactDemos/actionablesListComponents/ActionablesListPost";
 import config from "../_CONSTANTS";
 
 const Page: NextPageWithLayout = () => {
@@ -18,7 +18,7 @@ const Page: NextPageWithLayout = () => {
       alignItems="center"
       justifyContent="space-between"
     >
-      <Projects />
+      <ActionablesListPost />
       {/* <ButtonGroup variant={"outline"} spacing="6">
         <Button colorScheme={"cyan"}>Save</Button>
         <Button variant={"solid"} colorScheme={"yellow"}>Cancel</Button>

@@ -2,7 +2,15 @@ import React, { ReactNode, useState } from "react";
 import { createContext, useContext, useRef } from "react";
 import NextLink from "next/link";
 
-import { Flex, Spacer, Box, VStack, Divider, chakra, keyframes} from "@chakra-ui/react";
+import {
+  Flex,
+  Spacer,
+  Box,
+  VStack,
+  Divider,
+  chakra,
+  keyframes,
+} from "@chakra-ui/react";
 import { BsCircleHalf } from "react-icons/bs";
 import { BsLinkedin, BsGithub, BsInstagram } from "react-icons/bs";
 import { Icon, Text } from "@chakra-ui/react";
@@ -26,6 +34,7 @@ import headerStyle from "../styles/_LAYOUT_TopHeader.module.css";
 import navStyle from "../styles/_LAYOUT_NavBar.module.css";
 import config from "../_CONSTANTS";
 import { useRouter } from "next/router";
+import { FaCommentsDollar } from "react-icons/fa";
 
 interface Props {
   children?: ReactNode;
@@ -51,19 +60,36 @@ const ColorModeControl = () => {
 const TopHeader = () => {
   return (
     <Flex
-      flexShrink={0}
       marginBottom={["1.5em", "0"]}
       padding={["0.5em"]}
       className={headerStyle.TopHeader}
-      justify="flex-start"
+      justify="stretch"
       align="center"
       direction={["column", "row"]}
     >
-      <Box height="100%" maxWidth={["100%","20%"]} >
+      <Box 
+        className="animated-logo"
+        height="100%"
+        flexShrink={"1"}
+        // flexBasis={"20%"}
+        // flexGrow={"0"}
+        // maxWidth={["100%"]}
+      >
         <AnimatedLogo />
       </Box>
-      <Spacer />
-      <Box flexBasis={["100%", "80%"]} paddingLeft={["0", "1em"]} paddingRight="0.1em">
+      {/* <Spacer /> */}
+      <Box
+        className="animated-title"
+        flexShrink={"0"}
+        // flexBasis={["100%", "80%"]}
+        // flexBasis={"75%"}
+        flexGrow={"2"}
+        // position={"absolute"}
+        // top={"1em"}
+        // right={"1em"}
+        paddingLeft={["0", "1em"]}
+        paddingRight="0.1em"
+      >
         <AnimatedTitle />
       </Box>
     </Flex>
@@ -80,31 +106,47 @@ const makeBlink = keyframes`
 const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [menuOpen, setMenuOpen] = useState(true);
-  const [copiedText, setCopiedText] = useState('Contact Me');
+  const [copiedText, setCopiedText] = useState("Contact Me");
   const context = useContext(GlobalContext);
-  const darkBg = "linear-gradient(90deg, rgba(26,32,44,1) 40%, rgba(255,255,255,0) 100%)"
-  const lightBG = "linear-gradient(90deg, rgba(255,255,255,1) 40%, rgba(255,255,255,0) 100%)"
-  
+  const darkBg =
+    "linear-gradient(90deg, rgba(26,32,44,1) 40%, rgba(255,255,255,0) 100%)";
+  const lightBG =
+    "linear-gradient(90deg, rgba(255,255,255,1) 40%, rgba(255,255,255,0) 100%)";
+
   const Footer = () => {
     return (
       <Drawer isOpen={isOpen} placement="bottom" size="lg" onClose={onClose}>
         <DrawerOverlay>
           <DrawerContent height="30vh">
             <DrawerCloseButton />
-            <DrawerHeader paddingTop="2em" textAlign="center">{copiedText}</DrawerHeader>
-            <DrawerBody 
-            textAlign="center" 
-            // fontSize="4em" 
-            // lineHeight={"4em"}
+            <DrawerHeader paddingTop="2em" textAlign="center">
+              {copiedText}
+            </DrawerHeader>
+            <DrawerBody
+              textAlign="center"
+              // fontSize="4em"
+              // lineHeight={"4em"}
             >
               <NextLink href="https://www.linkedin.com/in/craiglldempsey/">
-                <IconButton icon={<BsLinkedin/>} aria-label="linked in icon, button links to profile" size="lg" />
+                <IconButton
+                  icon={<BsLinkedin />}
+                  aria-label="linked in icon, button links to profile"
+                  size="lg"
+                />
               </NextLink>
               <NextLink href="https://www.instagram.com/dempseycraig/">
-                <IconButton icon={<BsInstagram/>} aria-label="instagram icon, button links to instagram profile" size="lg" />
+                <IconButton
+                  icon={<BsInstagram />}
+                  aria-label="instagram icon, button links to instagram profile"
+                  size="lg"
+                />
               </NextLink>
               <NextLink href="https://github.com/dempseyc/">
-                <IconButton icon={<BsGithub/>} aria-label="github icon, button links to github profile" size="lg" />
+                <IconButton
+                  icon={<BsGithub />}
+                  aria-label="github icon, button links to github profile"
+                  size="lg"
+                />
               </NextLink>
             </DrawerBody>
           </DrawerContent>
@@ -129,20 +171,20 @@ const Navbar = () => {
         }}
       >
         <Button
-        paddingInlineEnd={"1rem"}
-        paddingInlineStart={"1rem"}
+          paddingInlineEnd={"1rem"}
+          paddingInlineStart={"1rem"}
           _before={
             info.name === context.currView
-            ? {
-              content: `""`,
-              mr: "10px",
-              display: "inline-block",
-              width: "1px",
-              height: "100%",
-              bg: currLinkBg,
-              opacity: "1",
-              transition: "all 500ms",
-              animation:`${makeBlink} 4.5s linear infinite`
+              ? {
+                  content: `""`,
+                  mr: "10px",
+                  display: "inline-block",
+                  width: "1px",
+                  height: "100%",
+                  bg: currLinkBg,
+                  opacity: "1",
+                  transition: "all 500ms",
+                  animation: `${makeBlink} 4.5s linear infinite`,
                 }
               : {
                   content: `""`,
@@ -172,42 +214,45 @@ const Navbar = () => {
     );
   });
 
-  const fallbackCopyToClipboard = (str: string, cb:()=>void) => {
-    const el = document.createElement('textarea');
+  const fallbackCopyToClipboard = (str: string, cb: () => void) => {
+    const el = document.createElement("textarea");
     el.value = str.trim();
-    el.setAttribute('readonly', '');
-    el.style.position = 'absolute';
-    el.style.left = '-9999px';
+    el.setAttribute("readonly", "");
+    el.style.position = "absolute";
+    el.style.left = "-9999px";
     document.body.appendChild(el);
     el.select();
     try {
-      let success = document.execCommand('copy');
+      let success = document.execCommand("copy");
       cb();
       console.log(`${str} copied to clipboard`);
     } catch (error) {
-      console.log('in fallback copy', error);
+      console.log("in fallback copy", error);
     }
     document.body.removeChild(el);
   };
-  
-  const copyToClipboard = (str: string, cb:()=>void) => {
+
+  const copyToClipboard = (str: string, cb: () => void) => {
     if (!navigator.clipboard) {
       fallbackCopyToClipboard(str, cb);
       return;
     }
-    navigator.clipboard.writeText(str).then(() => {
-      console.log(`${str} copied to clipboard`);
-      cb();
-    }, (error) => console.log('in copyToClipboard', error))
-  }
-  
+    navigator.clipboard.writeText(str).then(
+      () => {
+        console.log(`${str} copied to clipboard`);
+        cb();
+      },
+      (error) => console.log("in copyToClipboard", error)
+    );
+  };
+
   const clickToCopy = (e: React.SyntheticEvent) => {
     const cb = () => {
       setCopiedText("'craig.dempsey@gmail.com' copied to Clipboard!");
     };
     e.preventDefault();
     copyToClipboard("craig.dempsey@gmail.com", cb);
-  }
+  };
 
   return (
     <VStack
@@ -215,7 +260,7 @@ const Navbar = () => {
       spacing={0}
       width={"40vh"}
       className={navStyle.NavBar}
-      bg={useColorModeValue(lightBG,darkBg)}
+      bg={useColorModeValue(lightBG, darkBg)}
       onMouseEnter={() => setMenuOpen(true)}
       onMouseLeave={() => setMenuOpen(false)}
     >
@@ -233,7 +278,10 @@ const Navbar = () => {
         justifyContent={"flex-start"}
         width="100%"
         variant="clear"
-        onClick={(e) => { onOpen(); clickToCopy(e)}}
+        onClick={(e) => {
+          onOpen();
+          clickToCopy(e);
+        }}
         colorScheme={"cyan"}
         aria-label="contact"
         size={["lg"]}
@@ -250,8 +298,10 @@ export const GlobalContext = createContext({ currView: "home" });
 
 const Layout = ({ children }: Props) => {
   const router = useRouter();
+  console.log(router.query.view);
+  const view = router.query.view !== undefined ? router.query.view : "home";
   return (
-    <GlobalContext.Provider value={{ currView: router.query.view as string }}>
+    <GlobalContext.Provider value={{ currView: view as string }}>
       <Flex
         className="Layout"
         direction="column"
@@ -261,7 +311,14 @@ const Layout = ({ children }: Props) => {
         overflow="hidden"
       >
         <TopHeader />
-      <Box ml={["0em","6em"]} mt={"1.5em"} flex={["0 0 65vh","0 0 80vh"]} overflow={"scroll"} className="main" bg="#88888820" border="12px solid #00000000">
+        <Box
+          ml={["0em", "6em"]}
+          mt={"1.5em"}
+          flex={["0 0 65vh", "0 0 80vh"]}
+          className="main"
+          bg="#88888820"
+          border="12px solid #00000000"
+        >
           <main>{children}</main>
         </Box>
         <Box
@@ -270,7 +327,7 @@ const Layout = ({ children }: Props) => {
           position="fixed"
           bottom={0}
           left={0}
-          pb={["0","1em"]}
+          pb={["0", "1em"]}
         >
           <Navbar />
         </Box>

@@ -1,3 +1,7 @@
+/* html {
+  scroll-snap-type: y mandatory;
+} */
+
 html,
 body {
   padding: 0;

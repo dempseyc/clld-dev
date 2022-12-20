@@ -1,7 +1,6 @@
 .title {
   /* animation: fadeIn 800ms ease-in-out 2s forwards; */
   animation: fadeIn 500ms ease-in-out 500ms forwards;
-  min-width: 60vw;
   opacity: 0;
 }
 

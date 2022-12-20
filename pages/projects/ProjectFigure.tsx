@@ -7,7 +7,11 @@ const ProjectFigure = (props: any) => {
   const data = props.data;
   return (
     props?.data ?
-    <Box mb={"3em"}>
+    <Box 
+      mb={"3em"} 
+      // scrollSnapStop="always"
+      scrollSnapAlign="start"
+    >
       <Heading fontSize={["2xl","3xl"]}>{data.title}</Heading>
       <Text>{data.heading}</Text>
       <Text>{data.stack}</Text>
