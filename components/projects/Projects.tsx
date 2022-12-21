@@ -1,5 +1,5 @@
 import ProjectFigure from "./ProjectFigure";
-import ScrollSnapBox from "../components/ScrollSnapBox";
+import ScrollSnapBox from "../ScrollSnapBox";
 
 const projects = [
   {

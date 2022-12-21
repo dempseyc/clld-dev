@@ -27,8 +27,8 @@ import {
 import { useColorMode, useColorModeValue } from "@chakra-ui/react";
 import { useDisclosure } from "@chakra-ui/react";
 
-import AnimatedLogo from "./components/AnimatedLogo";
-import AnimatedTitle from "./components/AnimatedTitle";
+import AnimatedLogo from "../components/AnimatedLogo";
+import AnimatedTitle from "../components/AnimatedTitle";
 
 import headerStyle from "../styles/_LAYOUT_TopHeader.module.css";
 import navStyle from "../styles/_LAYOUT_NavBar.module.css";

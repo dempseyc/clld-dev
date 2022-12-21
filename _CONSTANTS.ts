@@ -6,7 +6,7 @@ const constants = {
     // {name: "code_art", href: "code_art"},
   ],
   OTHER_LINKS: [
-    // {name: "blog", href: "blog"},
+    {name: "blog", href: "blog/home/"},
   ]
 };
 

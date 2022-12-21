@@ -9,6 +9,7 @@ import '@fontsource/alexandria/700.css' //bold
 import '@fontsource/roboto-slab/400.css' //regular
 import '@fontsource/roboto-slab/700.css' //bold
 import '@fontsource/courier-prime/400.css' //regular
+import 'highlight.js/styles/default.css'
 
 import type { AppProps } from "next/app";
 import type { ReactElement, ReactNode } from 'react'

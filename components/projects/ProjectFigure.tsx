@@ -1,6 +1,6 @@
 import { Box, Heading, Text, Image} from "@chakra-ui/react";
 import NextLink from "next/link";
-import LinkText from "../components/LinkText";
+import LinkText from "../LinkText";
 import { FaGithub } from "react-icons/fa";
 
 const ProjectFigure = (props: any) => {

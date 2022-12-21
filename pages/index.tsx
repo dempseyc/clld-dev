@@ -6,7 +6,7 @@ import { GlobalContext } from "./_LAYOUT";
 import { ButtonGroup, Button, Box, Flex, Text, useColorModeValue } from "@chakra-ui/react";
 import { MdBuild, MdCall } from "react-icons/md";
 import type { NextPageWithLayout } from "./_app";
-import Projects from "./projects/Projects";
+import Projects from "../components/projects/Projects";
 import config from "../_CONSTANTS";
 
 const Page: NextPageWithLayout = () => {
