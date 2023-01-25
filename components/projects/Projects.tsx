@@ -6,7 +6,7 @@ const projects = [
     title: "Trope-Hunt",
     heading: "Web App, Find Tropes in Xmas Movies",
     thumbnail: "trope-hunt-screenshot.png",
-    link: "https://mern-template-git-demo-no-db-dempseyc.vercel.app/home/main",
+    link: "https://trope-hunt.vercel.app/home/main",
     githublink: "https://github.com/dempseyc/trope-hunt",
     stack: "React, Redux, NextJS, MaterialUI, MongoDB, Express",
   },

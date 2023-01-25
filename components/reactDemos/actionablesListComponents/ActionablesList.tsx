@@ -13,15 +13,16 @@ interface ActionablesListProps {
   isValid: boolean;
 }
 
-// you don't change this much
 const ActionablesList = (props: ActionablesListProps) => {
   const { contentName, ListItem, data, isValid } = props;
 
   const list =
     isValid && data ? (
+      // change the mapping function to match the ListItem and the data.
+      // or abstract it out to props or context.
       data.map((datum: number, i: number) => {
         return (
-          <ListItem key={""+i} index={i} datum={datum}/>
+          <ListItem key={i} index={i} datum={datum}/>
         );
       })
     ) : (

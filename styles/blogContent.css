@@ -1,0 +1,88 @@
+.blog-post > h1 {
+  font-size: xx-large;
+}
+
+.blog-content > h1 {
+  font-size: x-large;
+}
+
+.blog-content > p {
+  margin: 0.5em;
+}
+
+.blog-content > p > a {
+  opacity: 0.8;
+  text-decoration: underline;
+  font-weight: medium;
+}
+.blog-content > p > a:hover {
+  font-weight: bold;
+}
+
+.blog-content > ol {
+  list-style-type: decimal;
+  margin-left: 1em;
+}
+
+.blog-content > ol > li {
+  display: list-item;
+}
+
+.blog-content > ol > li::marker {
+  font-weight: bold;
+}
+
+.blog-content > blockquote {
+  font-size: large;
+  opacity: 0.8;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: -6em;
+  margin-bottom: -6em;
+}
+
+.blog-content > blockquote::before {
+  opacity: 0.6;
+  position: relative;
+  height: 1em;
+  top: 1em;
+  left: -10%;
+  font-size: 5em;
+  content: "“";
+}
+
+.blog-content > blockquote::after {
+  opacity: 0.6;
+  position: relative;
+  bottom: 0.5em;
+  left: 100%;
+  font-size: 5em;
+  content: "”";
+}
+
+.blog-content pre {
+  margin: unset;
+  margin-top: 0.75em;
+  margin-bottom: 0.75em;
+  width: 100%;
+  /* border: 2px dashed #ffec5b; */
+  border: 5px solid #ef6ae288;
+
+  white-space: pre-wrap; /* Since CSS 2.1 */
+  white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+  white-space: -pre-wrap; /* Opera 4-6 */
+  white-space: -o-pre-wrap; /* Opera 7 */
+  word-wrap: break-word; /* Internet Explorer 5.5+ */
+}
+
+.blog-card > div {
+  margin-bottom: 0.5em;
+}
+
+.blog-card > div:first-child {
+  border-top: 1px solid #0AC5EA;
+}
+
+.blog-card img {
+  float: right;
+}

@@ -298,15 +298,16 @@ export const GlobalContext = createContext({ currView: "home" });
 
 const Layout = ({ children }: Props) => {
   const router = useRouter();
-  console.log(router.query.view);
-  const view = router.query.view !== undefined ? router.query.view : "home";
+  const path1 = router.pathname.split("/")[1];
+  console.log(path1);
+  const view = path1 !== "" ? path1 : "home";
   return (
     <GlobalContext.Provider value={{ currView: view as string }}>
       <Flex
         className="Layout"
         direction="column"
         height="100vh"
-        width={["100vw", "100vw", "48em"]}
+        width={["100vw", "95vw", "80vw"]}
         margin="0 auto"
         overflow="hidden"
       >

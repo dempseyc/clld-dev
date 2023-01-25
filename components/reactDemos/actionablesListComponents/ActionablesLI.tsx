@@ -2,16 +2,11 @@ import { useContext } from "react";
 
 import { ActionablesContext } from "./ActionablesListDemo";
 
-export interface ActionablesLIProps {
-  index: number;
-  datum: any;
-}
-
 const liStyle: React.CSSProperties = {
   display: "flex",
   justifyContent: "space-between",
   padding: "0.5em",
-  border: "1px solid pink",
+  border: "1px solid magenta",
 }
 
 const buttonStyle: React.CSSProperties = {
@@ -26,18 +21,23 @@ const h2Style: React.CSSProperties = {
   fontSize: "1.5em",
 }
 
+export interface ActionablesLIProps {
+  index: number;
+  datum: any;
+}
+
 // make list items that do what you need, then pass it as ListItem prop of List
 const ActionablesLI = (props: ActionablesLIProps) => {
   const { index, datum } = props;
   const ctx = useContext(ActionablesContext);
   const actions = ctx?.actions ?? {};
-  const buttons = Object.keys(actions).map((key, i) => {
+  const buttons = Object.keys(actions).map((actionName, i) => {
     return (
       <button
         key={i}
-        onClick={() => actions[key](datum)}
+        onClick={() => actions[actionName](datum)}
         style={buttonStyle}
-      >{""+key}</button>
+      >{`${actionName}`}</button>
     );
   });
   return (

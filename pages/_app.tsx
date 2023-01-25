@@ -3,13 +3,15 @@ import "../styles/AnimatedLogo.css";
 import "../styles/animatedTitle.css";
 import "../styles/_LAYOUT_TopHeader.module.css"; 
 import "../styles/_LAYOUT_NavBar.module.css";
+import "../styles/blogContent.css";
 import '@fontsource/alexandria/200.css' //extralight
 import '@fontsource/alexandria/500.css' //medium
 import '@fontsource/alexandria/700.css' //bold
 import '@fontsource/roboto-slab/400.css' //regular
 import '@fontsource/roboto-slab/700.css' //bold
 import '@fontsource/courier-prime/400.css' //regular
-import 'highlight.js/styles/default.css'
+// import 'highlight.js/styles/default.css'
+import '../styles/dracula.css';
 
 import type { AppProps } from "next/app";
 import type { ReactElement, ReactNode } from 'react'

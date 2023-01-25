@@ -34,7 +34,7 @@ const useData = () => {
     if (!isValid) {
       fetchData();
     }
-  }, [fetchData, invalidAt])
+  }, [fetchData, isValid])
   const refetch = () => { setInvalidAt(new Date().getTime()); }
   return { data, isValid, refetch };
 };

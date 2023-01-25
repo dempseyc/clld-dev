@@ -4,11 +4,15 @@ import ActionablesLI from "./ActionablesLI";
 
 {/* SETUP */}
 
-const exampleData = (success: boolean, timeout: number) => {
+const exampleData = () => {
+  return Array.from({length: 10}, () => Math.floor(Math.random()*20));
+}
+
+const backendSimulation = (success: boolean, timeout: number) => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       if (success) {
-        resolve(Array.from({length: 10}, () => Math.floor(Math.random()*20)));
+        resolve(exampleData());
       } else {
         reject({ message: "Error" } as unknown);
       }
@@ -23,7 +27,7 @@ const useData = () => {
   const isValid = validAt > invalidAt;
   const fetchData = async () => {
     try {
-      const response = await exampleData(true, 200);
+      const response = await backendSimulation(true, 200);
       setData(response as null | any[]);
       setValidAt(new Date().getTime());
     } catch (error) {
@@ -34,7 +38,7 @@ const useData = () => {
     if (!isValid) {
       fetchData();
     }
-  }, [fetchData, isValid, invalidAt])
+  }, [fetchData, isValid])
   const refetch = () => { setInvalidAt(new Date().getTime()); }
   return { data, isValid, refetch };
 };
@@ -68,13 +72,13 @@ const ShowNumber = () => {
   const ctx = useContext(ActionablesContext);
   const count = ctx?.count ?? 0;
   return (
-    <h1 style={h1Style}>{"current count: "+count}</h1>
+    <h1 style={h1Style}>{`current count: ${count}`}</h1>
   )
 }
 
 const ActionablesListDemo = () => {
   const [count, setCount] = useState(0);
-  let { data, isValid, refetch } = useData();
+  const { data, isValid, refetch } = useData();
 
   const actions = {
     increment_by: (num: number) => {
@@ -97,7 +101,7 @@ const ActionablesListDemo = () => {
     <div style={containerStyle}>
       <ActionablesList
         contentName="numbers"
-        ListItem={ActionablesLI} //each is consumer
+        ListItem={ActionablesLI}
         data={data}
         isValid={isValid}
         />

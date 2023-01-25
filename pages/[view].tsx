@@ -1,12 +1,8 @@
-import Router from "next/router";
-import { ReactElement, useEffect, useContext } from "react";
-import { useCallback, useMemo, useState} from "react";
+import { ReactElement, useContext } from "react";
 import Layout from "./_LAYOUT";
 import { GlobalContext } from "./_LAYOUT";
-import { ButtonGroup, Button, Box, Flex, Text, useColorModeValue } from "@chakra-ui/react";
-import { MdBuild, MdCall } from "react-icons/md";
+import { ButtonGroup, Button, Box, Flex, Text } from "@chakra-ui/react";
 import type { NextPageWithLayout } from "./_app";
-import ActionablesListPost from "../components/reactDemos/actionablesListComponents/ActionablesListPost";
 import config from "../_CONSTANTS";
 
 const Page: NextPageWithLayout = () => {
@@ -18,7 +14,6 @@ const Page: NextPageWithLayout = () => {
       alignItems="center"
       justifyContent="space-between"
     >
-      <ActionablesListPost />
       {/* <ButtonGroup variant={"outline"} spacing="6">
         <Button colorScheme={"cyan"}>Save</Button>
         <Button variant={"solid"} colorScheme={"yellow"}>Cancel</Button>
@@ -40,8 +35,8 @@ const Page: NextPageWithLayout = () => {
         </Button>
       </ButtonGroup>
       <Box>
-          <Text>{`Here is a good paragraph in roboto-slab. ${context.currView}`}</Text>
-        </Box> */}
+    </Box> */}
+    <Text>{`Here is a paragraph in roboto-slab. ${context.currView}.`}</Text>
     </Flex>
   );
 };

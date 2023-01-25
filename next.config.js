@@ -3,6 +3,9 @@ const nextConfig = {
   // assetPrefix: process.env.NODE_ENV === "production" ? "/dev" : "",
   // assetPrefix: "/dev",
   // basePath: "/dev",
+  images: {
+    unoptimized: true,
+  },
   reactStrictMode: true,
   swcMinify: true,
 //   async redirects() {
