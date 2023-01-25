@@ -7,7 +7,7 @@ const BlogCard = ({ post }: { post: any }) => {
     <Link className={"blog-card"} href={`post/${post.slug}`}>
       <Flex justifyContent={"flex-end"}>
         <Box float={"right"} flex={"0 1 66%"}  p={3}>
-          <Heading fontSize={["1.5em","2em","2em"]}>{post.data.title}</Heading>
+          <Heading fontSize={["1.25em","2em","2em"]}>{post.data.title}</Heading>
           <p>{post.data.date}</p>
         <p>{post.data.metaDesc}</p>
         </Box>

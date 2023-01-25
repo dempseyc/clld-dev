@@ -4,7 +4,7 @@ import ActionablesLI from "../actionablesListComponents/ActionablesLI";
 
 {/* SETUP */}
 
-const exampleData = (success: boolean, timeout: number) => {
+const backendSimulation = (success: boolean, timeout: number) => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       if (success) {
@@ -21,20 +21,20 @@ const useData = () => {
   const [validAt, setValidAt] = useState(0);
   const [invalidAt, setInvalidAt] = useState(new Date().getTime());
   const isValid = validAt > invalidAt;
-  const fetchData = async () => {
-    try {
-      const response = await exampleData(true, 200);
-      setData(response as null | any[]);
-      setValidAt(new Date().getTime());
-    } catch (error) {
-      console.log(error);
-    }
-  };
   useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await backendSimulation(true, 200);
+        setData(response as null | any[]);
+        setValidAt(new Date().getTime());
+      } catch (error) {
+        console.log(error);
+      }
+    };
     if (!isValid) {
       fetchData();
     }
-  }, [fetchData, isValid])
+  }, [isValid, setData, setValidAt, backendSimulation]);
   const refetch = () => { setInvalidAt(new Date().getTime()); }
   return { data, isValid, refetch };
 };

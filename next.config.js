@@ -7,6 +7,7 @@ const nextConfig = {
     unoptimized: true,
   },
   reactStrictMode: true,
+  trailingSlash: true,
   swcMinify: true,
 //   async redirects() {
 //     return [

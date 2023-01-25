@@ -158,7 +158,6 @@ const Navbar = () => {
   const currLinkBg = useColorModeValue("gray.800", "gray.200");
   const otherLinkBg = useColorModeValue("gray.800", "gray.200");
   const Links = [...config.HOME_VIEWS, ...config.OTHER_LINKS].map((info, i) => {
-    console.log(context.currView);
     return (
       <NextLink
         key={i}
@@ -299,7 +298,6 @@ export const GlobalContext = createContext({ currView: "home" });
 const Layout = ({ children }: Props) => {
   const router = useRouter();
   const path1 = router.pathname.split("/")[1];
-  console.log(path1);
   const view = path1 !== "" ? path1 : "home";
   return (
     <GlobalContext.Provider value={{ currView: view as string }}>

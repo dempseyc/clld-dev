@@ -29,7 +29,6 @@ export async function getStaticProps(){
 }
 
 const Home = ({posts}:{posts:any[]}) => {
-  console.log("home", posts);
   return (
     <ScrollSnapBox>
       {posts?.map((post: {},index: number)=>(
