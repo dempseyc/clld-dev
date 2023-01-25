@@ -38,7 +38,7 @@ const useData = () => {
     if (!isValid) {
       fetchData();
     }
-  }, [isValid, setData, setValidAt, backendSimulation]);
+  }, [isValid, setData, setValidAt]);
   const refetch = () => { setInvalidAt(new Date().getTime()); }
   return { data, isValid, refetch };
 };
