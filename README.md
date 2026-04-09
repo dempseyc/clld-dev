@@ -9,5 +9,4 @@ layout and basic designs,
 
 TODOS
 • views
-• storybook?
-• connect blog
+• storybook

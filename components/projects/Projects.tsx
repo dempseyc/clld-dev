@@ -22,10 +22,10 @@ const projects = [
     title: "TTT-HIT-POW",
     heading: "Python Websockets game",
     thumbnail: "ttt-hit-pow-screenshot.png",
-    link: "http://www.craigdempsey.com/ttt-hit-pow-client",
+    link: "http://www.craig-dempsey.com/ttt-hit-pow-client",
     githublink: "https://github.com/dempseyc/gameserver",
     stack: "Python, WebSocket, Javascript, CSS Grid and Flex",
-    // "story": "Learned some Python. Love array comprehension stuff. Making a game is a good way to learn a language. YOU NEED A PARTNER TO PLAY. Click to copy this link and send it to a friend. <a class='copy-link' href=''>http://www.craigdempsey.com/ttt-hit-pow-client</a><span> copied!</span>"
+    // "story": "Learned some Python. Love array comprehension stuff. Making a game is a good way to learn a language. YOU NEED A PARTNER TO PLAY. Click to copy this link and send it to a friend. <a class='copy-link' href=''>http://www.craig-dempsey.com/ttt-hit-pow-client</a><span> copied!</span>"
   },
   // {
   //   "title": "SleepWithKevin / GCal API",
@@ -39,7 +39,7 @@ const projects = [
     title: "SMATTER_art",
     heading: "Generative Art, Trigonometry algos",
     thumbnail: "genny1.jpg",
-    link: "http://www.craigdempsey.com/smatter_art",
+    link: "http://www.craig-dempsey.com/smatter_art",
     githublink: "https://github.com/dempseyc/react-gen-art",
     stack: "React, Redux easy-peasy, UI component designs",
   },
@@ -47,7 +47,7 @@ const projects = [
   //   "title": "Thinking Cat",
   //   "heading": "personality test",
   //   "thumbnail": "thinking_cat_thumb.gif",
-  //   "link": "http://www.craigdempsey.com/thinking_cat_fe",
+  //   "link": "http://www.craig-dempsey.com/thinking_cat_fe",
   //   "githublink": "https://github.com/dempseyc/thinking-cat",
   //   "stack": "D3, JQuery, ExpressJS Server, PostgresQL"
   // },
